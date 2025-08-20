@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "596937199928",
+    "project_id": "prosmer-ai",
+    "storage_bucket": "prosmer-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596937199928:android:081bc4ffc17b2c5a72f1cd",
+        "android_client_info": {
+          "package_name": "com.healweal.prosmer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjj-2IqBAPCZCCLIF3RQrrIEo4bmBYPqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596937199928:android:3b1be53917624e5f72f1cd",
+        "android_client_info": {
+          "package_name": "com.healweal.prosmerai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjj-2IqBAPCZCCLIF3RQrrIEo4bmBYPqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Prosmer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#011423</item>
+        <item name="colorPrimaryVariant">@color/charcoal</item>
+        <item name="colorOnPrimary">@color/deep_space_blue</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#011423</item>
+        <item name="colorSecondaryVariant">#011423</item>
+        <item name="colorOnSecondary">@color/deep_space_blue</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/deep_space_blue</item>
+        <!-- Background color -->
+        <item name="android:windowBackground">@color/deep_space_blue</item>
+    </style>
+
+    <style name="Theme.Prosmer" parent="Base.Theme.Prosmer" />
+</resources>

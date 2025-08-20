@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Prosmer</string>
+    <string name="onboarding_title_1">Welcome to Prosmer</string>
+    <string name="onboarding_desc_1">Your Personal Guide to a Higher Mind.</string>
+
+    <!-- Onboarding Slide 2 -->
+    <string name="onboarding_title_2">Unlock Your Full Potential</string>
+    <string name="onboarding_desc_2">Merge cutting-edge science with timeless mindfulness to guide your personal evolution.</string>
+
+    <!-- Onboarding Slide 3 -->
+    <string name="onboarding_title_3">The Science of You</string>
+    <string name="onboarding_desc_3">Our adaptive AI learns from you, creating a truly personalized path rooted in neuroscience.</string>
+
+    <!-- Onboarding Slide 4 -->
+    <string name="onboarding_title_4">Achieve Clarity &amp; Focus</string>
+    <string name="onboarding_desc_4">Sharpen focus, enhance clarity, build resilience, and expand your awareness.</string>
+
+    <!-- Onboarding Slide 5 / Call to Action -->
+    <string name="onboarding_title_5">Begin Your Evolution</string>
+    <string name="onboarding_desc_5">The next version of you awaits. Create your profile to start your personalized journey.</string>
+
+    <!-- Buttons -->
+    <string name="get_started">Get Started</string>
+    <string name="already_have_account">I already have an account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".OnboardingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="32dp">
+
+        <!-- Header Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Let's get to know you"
+            android:textColor="#011423"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Header Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="This will help us personalize your journey."
+            android:textColor="#5A6670"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <!-- Question 1: Mood -->
+        <TextView
+            android:id="@+id/tvFeelingQuestion"
+            style="@style/OnboardingQuestionTitle"
+            android:text="How are you feeling right now?"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+
+        <RadioGroup
+            android:id="@+id/moodRadioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFeelingQuestion">
+
+            <RadioButton
+                android:id="@+id/radioHappy"
+                style="@style/MoodRadioButton"
+                android:text="🙂\nHappy" />
+
+            <RadioButton
+                android:id="@+id/radioOkay"
+                style="@style/MoodRadioButton"
+                android:layout_marginHorizontal="12dp"
+                android:checked="true"
+                android:text="😐\nOkay" />
+
+            <RadioButton
+                android:id="@+id/radioSad"
+                style="@style/MoodRadioButton"
+                android:text="😔\nSad" />
+        </RadioGroup>
+
+        <!-- Question 2: Energy Level -->
+        <TextView
+            android:id="@+id/tvEnergyQuestion"
+            style="@style/OnboardingQuestionTitle"
+            android:text="What's your energy level?"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/moodRadioGroup" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/energySlider"
+            style="@style/PremiumSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:value="50.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEnergyQuestion" />
+
+        <!-- Question 3: Focus -->
+        <TextView
+            android:id="@+id/tvFocusQuestion"
+            style="@style/OnboardingQuestionTitle"
+            android:text="What would you like to focus on?"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/energySlider" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/goalsChipGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFocusQuestion"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFocus"
+                style="@style/FocusChip"
+                android:text="Improve Focus" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipStress"
+                style="@style/FocusChip"
+                android:text="Manage Stress" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSelfAwareness"
+                style="@style/FocusChip"
+                android:text="Self-Awareness" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipProductivity"
+                style="@style/FocusChip"
+                android:text="Boost Productivity" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCreativity"
+                style="@style/FocusChip"
+                android:text="Enhance Creativity" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Spacer to push button to the bottom if content is short -->
+        <View
+            android:id="@+id/spacer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/goalsChipGroup" />
+
+        <!-- Continue Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#011423"
+            android:fontFamily="sans-serif-medium"
+            android:paddingVertical="18dp"
+            android:text="Let's Begin Your Journey"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spacer"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
