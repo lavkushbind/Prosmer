@@ -1,18 +1,287 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Prosmer" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">#011423</item>
-        <item name="colorPrimaryVariant">@color/charcoal</item>
-        <item name="colorOnPrimary">@color/deep_space_blue</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">#011423</item>
-        <item name="colorSecondaryVariant">#011423</item>
-        <item name="colorOnSecondary">@color/deep_space_blue</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/deep_space_blue</item>
-        <!-- Background color -->
-        <item name="android:windowBackground">@color/deep_space_blue</item>
+<?xml version="1.0" encoding="utf-8"?>
+
+ <resources>
+
+    <!-- ============================================= -->
+    <!-- FIX: ADDED BASE WIDGET STYLE                  -->
+    <!-- This empty style resolves the "Widget.App not found" error. -->
+    <!-- All styles named "Widget.App.*" will now correctly inherit from it. -->
+    <!-- ============================================= -->
+    <style name="Widget.App" parent="" />
+
+
+    <!-- ============================================= -->
+    <!-- TEXT APPEARANCE STYLES                        -->
+    <!-- ============================================= -->
+
+    <!-- Custom Text Style for Titles -->
+    <style name="TextAppearance.App.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">36sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textColor">@color/dark_grey</item>
     </style>
 
-    <style name="Theme.Prosmer" parent="Base.Theme.Prosmer" />
+    <!-- Custom Text Style for Body/Regular Text -->
+    <style name="TextAppearance.App.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">22sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextAppearance.App.SectionHeader" parent="">
+        <item name="android:fontFamily">gilroy_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="TextAppearance.App.PromptTitle" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">36sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="TextAppearance.App.SubQuestion" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">22sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
+    <!-- ============================================= -->
+    <!-- WIDGET STYLES                                 -->
+    <!-- ============================================= -->
+
+    <!-- Buttons -->
+    <style name="Widget.App.PrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:paddingVertical">16dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <style name="Widget.App.QuickActionButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="iconTint">@color/primary</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <!-- Cards -->
+    <style name="Widget.App.DashboardCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/light_grey</item>
+    </style>
+
+    <style name="Widget.App.DashboardCardContent" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="Widget.App.DashboardCardLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="Widget.App.DashboardCardTitle" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Widget.App.OnboardingCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="android:checkable">true</item>
+        <item name="cardBackgroundColor">@color/app_light_grey</item>
+    </style>
+
+    <style name="Widget.App.OnboardingCardText" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingVertical">16dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/card_text_selector</item>
+    </style>
+
+    <style name="Widget.App.GoalCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:checkable">true</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/light_grey</item>
+    </style>
+
+    <style name="Widget.App.GoalCardContent" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="Widget.App.GoalCardIcon" parent="">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="Widget.App.GoalCardText" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app_dark_grey</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Chips -->
+    <style name="Widget.App.SuggestionChip" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/light_grey</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="fontFamily">gilroy_regular</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.Body</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipMinHeight">40dp</item>
+    </style>
+
+    <style name="Widget.App.Chip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@color/grey</item>
+        <item name="chipBackgroundColor">@color/light_grey</item>
+        <item name="chipStrokeWidth">0dp</item>
+    </style>
+
+    <!-- Other Widgets -->
+    <style name="Widget.App.MoodEmoji" parent="">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:alpha">0.5</item>
+    </style>
+
+    <style name="Widget.App.MoodBar" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginHorizontal">4dp</item>
+        <item name="android:background">@drawable/mood_bar_background</item>
+    </style>
+
+    <style name="Widget.App.MoodDayLabel" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Widget.App.MoodEmojiSelect" parent="">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_marginHorizontal">12dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:alpha">0.4</item>
+    </style>
+
+    <style name="Widget.App.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app_dark_grey</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="buttonTint">@color/app_primary</item>
+    </style>
+
+    <!-- FIX: Converted from a "TextAppearance" style because it had layout attributes -->
+    <style name="Widget.App.SectionHeader" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/app_dark_grey</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+
+    <style name="SectionHeader" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="lineHeight">36sp</item>
+        <!-- <item name="android:fontFamily">@font/gilroy</item> -->
+    </style>
+
+    <!-- Day Label Text Style for Chart -->
+    <style name="DayLabel" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="lineHeight">22sp</item>
+        <!-- <item name="android:fontFamily">@font/gilroy</item> -->
+    </style>
+
+    <!-- Mood Emoji Style -->
+    <style name="MoodEmoji" parent="">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/emoji_background_selector</item>
+    </style>
+
+    <!-- Filter Chip Style -->
+    <style name="TagChip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/light_grey</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="chipCornerRadius">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <!-- <item name="android:fontFamily">@font/gilroy</item> -->
+    </style>
+
 </resources>

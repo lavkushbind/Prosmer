@@ -24,4 +24,7 @@
     <string name="already_have_account">I already have an account</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="suggestion_motivate">Motivate me</string>
+    <string name="suggestion_feel_low">I feel low</string>
+    <string name="suggestion_give_tip">Give me a tip</string>
 </resources>

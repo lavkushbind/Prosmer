@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white"
+    tools:context=".PreferenceSetupActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/btnSavePreferences"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Page Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customize Your Experience"
+                android:textColor="@color/app_dark_grey"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- Section 1: Goals -->
+            <TextView
+                style="@style/Widget.App.SectionHeader"
+                android:text="What are your main goals?" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:useDefaultMargins="true">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardGoalHealth"
+                    style="@style/Widget.App.GoalCard">
+                    <LinearLayout style="@style/Widget.App.GoalCardContent">
+                        <ImageView style="@style/Widget.App.GoalCardIcon" app:srcCompat="@drawable/ic_goal_health" />
+                        <TextView style="@style/Widget.App.GoalCardText" android:text="Health" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardGoalProductivity"
+                    style="@style/Widget.App.GoalCard">
+                    <LinearLayout style="@style/Widget.App.GoalCardContent">
+                        <ImageView style="@style/Widget.App.GoalCardIcon" app:srcCompat="@drawable/ic_goal_productivity" />
+                        <TextView style="@style/Widget.App.GoalCardText" android:text="Productivity" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardGoalMindfulness"
+                    style="@style/Widget.App.GoalCard">
+                    <LinearLayout style="@style/Widget.App.GoalCardContent">
+                        <ImageView style="@style/Widget.App.GoalCardIcon" app:srcCompat="@drawable/ic_goal_mindfulness" />
+                        <TextView style="@style/Widget.App.GoalCardText" android:text="Mindfulness" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardGoalLearning"
+                    style="@style/Widget.App.GoalCard">
+                    <LinearLayout style="@style/Widget.App.GoalCardContent">
+                        <ImageView style="@style/Widget.App.GoalCardIcon" app:srcCompat="@drawable/ic_goal_learning" />
+                        <TextView style="@style/Widget.App.GoalCardText" android:text="Learning" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+
+
+            <!-- Section 2: Habits -->
+            <TextView
+                style="@style/Widget.App.SectionHeader"
+                android:text="Choose some daily habits" />
+
+            <LinearLayout
+                android:id="@+id/habitsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <CheckBox android:id="@+id/cbHabitExercise" style="@style/Widget.App.CheckBox" android:text="Exercise" />
+                <CheckBox android:id="@+id/cbHabitMeditation" style="@style/Widget.App.CheckBox" android:text="Meditation" />
+                <CheckBox android:id="@+id/cbHabitJournaling" style="@style/Widget.App.CheckBox" android:text="Journaling" />
+                <CheckBox android:id="@+id/cbHabitReading" style="@style/Widget.App.CheckBox" android:text="Reading" />
+                <CheckBox android:id="@+id/cbHabitHydration" style="@style/Widget.App.CheckBox" android:text="Hydration" />
+            </LinearLayout>
+
+
+            <!-- Section 3: Interests -->
+            <TextView
+                style="@style/Widget.App.SectionHeader"
+                android:text="What topics interest you?" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupInterests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp">
+
+                <!-- ============================================================= -->
+                <!-- FIX: ADDED layout_width AND layout_height TO EVERY CHIP BELOW -->
+                <!-- ============================================================= -->
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.App.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Psychology" />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.App.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Philosophy" />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.App.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stoicism" />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.App.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Technology" />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.App.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Art &amp; Creativity" />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.App.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fitness" />
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Save Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSavePreferences"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="24dp"
+        android:elevation="4dp"
+        android:paddingVertical="16dp"
+        android:text="Save Preferences"
+        android:textColor="@color/app_white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/app_primary"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

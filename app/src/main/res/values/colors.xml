@@ -2,9 +2,35 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="deep_space_blue">#0D1B2A</color>
-    <color name="charcoal">#1B263B</color>
-    <color name="electric_teal">#00F5D4</color>
-    <color name="text_primary">#011423</color>
-    <color name="text_headline">#FFFFFF</color>
-</resources>
+
+    <!-- App Theme Colors -->
+
+    <color name="app_primary">#214ECF</color>
+    <color name="app_white">#FFFFFF</color>
+    <color name="app_light_grey">#E0E7EC</color>
+    <color name="app_dark_grey">#223542</color>
+    <color name="app_light_blue">#819CE6</color>
+    <color name="app_grey">#77838F</color>
+    <color name="app_shadow_bg">#C4C4C4</color>
+
+
+
+
+    <color name="primary">#214ECF</color>
+    <color name="light_blue">#819CE6</color>
+    <color name="dark_grey">#223542</color>
+    <color name="grey">#77838F</color>
+    <color name="light_grey">#E0E7EC</color>
+    <color name="shadow_color">#14000000</color>
+     <color name="text_primary">#223542</color>
+    <color name="mood_selector_text">#223542</color>
+    <color name="text_headline">#214ECF</color>
+    <color name="deep_space_blue">#FFFFFFFF</color>
+    <color name="card_stroke_selector">#214ECF</color>
+
+    <color name="card_text_selector">#223542</color>
+
+    <color name="background_cards">#F0F2F5</color>
+
+
+ </resources>

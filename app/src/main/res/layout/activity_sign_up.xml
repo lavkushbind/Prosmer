@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_white"
     android:padding="24dp"
-    android:background="@color/text_headline"
-
     tools:context=".SignUpActivity">
 
     <!-- Your App Logo -->
@@ -15,22 +14,23 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="32dp"
+        android:contentDescription="App Logo"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="App Logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Title styled according to "Gilroy-Bold, 24px" spec -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="gilroy_bold"
+        android:letterSpacing="0.03"
         android:text="Create Your Account"
-        android:textColor="#011423"
-
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-        android:textStyle="bold"
+        android:textColor="@color/app_dark_grey"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logoImageView" />
@@ -43,22 +43,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:hint="Name"
-        app:boxStrokeColor="@color/text_primary"
-
-        app:hintTextColor="@color/text_primary"
-         app:layout_constraintEnd_toEndOf="parent"
+        android:textColorHint="@color/app_grey"
+        app:boxStrokeColor="@color/app_primary"
+        app:hintTextColor="@color/app_primary"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameEditText"
             android:layout_width="match_parent"
-            android:textColor="@color/text_primary"
-
-            android:textColorHint="@color/text_primary"
-            android:textCursorDrawable="@null"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName|textCapWords" />
+            android:fontFamily="gilroy"
+            android:inputType="textPersonName|textCapWords"
+            android:letterSpacing="0.02"
+            android:textColor="@color/app_dark_grey"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,22 +71,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Email"
-        app:boxStrokeColor="@color/text_primary"
-
-        app:hintTextColor="@color/text_primary"
-         app:layout_constraintEnd_toEndOf="parent"
+        android:textColorHint="@color/app_grey"
+        app:boxStrokeColor="@color/app_primary"
+        app:hintTextColor="@color/app_primary"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
-            android:textColor="@color/text_primary"
-
-            android:textColorHint="@color/text_primary"
-            android:textCursorDrawable="@null"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:fontFamily="gilroy"
+            android:inputType="textEmailAddress"
+            android:letterSpacing="0.02"
+            android:textColor="@color/app_dark_grey"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,11 +99,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Password"
-        app:boxStrokeColor="@color/text_primary"
-
-        app:hintTextColor="@color/text_primary"
+        android:textColorHint="@color/app_grey"
+        app:boxStrokeColor="@color/app_primary"
         app:endIconMode="password_toggle"
-         app:layout_constraintEnd_toEndOf="parent"
+        app:hintTextColor="@color/app_primary"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emailLayout">
 
@@ -109,11 +111,12 @@
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_primary"
-
-            android:textColorHint="@color/text_primary"
+            android:fontFamily="gilroy"
+            android:inputType="textPassword"
+            android:letterSpacing="0.02"
+            android:textColor="@color/app_dark_grey"
             android:textCursorDrawable="@null"
-            android:inputType="textPassword" />
+            android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,35 +131,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordLayout">
 
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:fontFamily="gilroy_bold"
             android:padding="14dp"
-          android:backgroundTint="#011423"
-            android:textColor="@color/white"
             android:text="Sign Up"
-            android:textSize="16sp"/>
+            android:textColor="@color/app_white"
+            android:textSize="16sp"
+            app:backgroundTint="@color/app_primary"
+            app:cornerRadius="8dp" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:visibility="gone"
-            android:indeterminateTint="@color/white"/>
+            android:indeterminateTint="@color/app_white"
+            android:visibility="gone" />
 
     </FrameLayout>
 
+    <!-- Login link styled according to "Gilroy-Regular, 14px" spec -->
     <TextView
         android:id="@+id/loginLinkTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:fontFamily="gilroy"
+        android:letterSpacing="0.02"
         android:text="Already have an account? Log In"
-        android:textSize="16sp"
-        android:textColor="@color/text_primary"
-
+        android:textColor="@color/app_grey"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signUpButtonLayout" />

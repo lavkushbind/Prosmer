@@ -44,6 +44,11 @@ public class SignUpActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         loginLinkTextView = findViewById(R.id.loginLinkTextView);
 
+        if (mAuth.getCurrentUser() != null) {
+            navigateToMainApp();
+            return; // Important to stop further execution
+        }
+
         signUpButton.setOnClickListener(v -> {
             if (validateInput()) {
                 registerUser();
@@ -55,6 +60,15 @@ public class SignUpActivity extends AppCompatActivity {
             startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
         });
     }
+
+    private void navigateToMainApp() {
+        Intent intent = new Intent(SignUpActivity.this, OnboardingTestActivity.class);
+        // These flags clear the activity stack, so the user can't go back to the login screen
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
 
     private boolean validateInput() {
         // Clear previous errors

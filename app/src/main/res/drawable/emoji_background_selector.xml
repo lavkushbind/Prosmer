@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- State when the emoji is selected -->
+    <!-- It shows a circular light grey background with a 2dp primary blue border. -->
+    <item android:state_selected="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/light_grey" />
+            <stroke
+                android:width="3dp"
+                android:color="@color/primary" />
+        </shape>
+    </item>
+
+    <!-- Default state (not selected) -->
+    <!-- It shows a simple circular light grey background. -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/light_grey" />
+        </shape>
+    </item>
+
+</selector>

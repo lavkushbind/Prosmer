@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Header: Greeting and Streak Counter -->
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:textAppearance="@style/TextAppearance.App.Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Good Morning, Alex 👋" />
+
+    <LinearLayout
+        android:id="@+id/streakCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/habit_item_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvGreeting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvGreeting">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_add_habit"
+           />
+
+        <TextView
+            android:id="@+id/tvStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="3 Days" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/quickButtonsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGreeting">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- Daily Prompt Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDailyPrompt"
+                style="@style/Widget.App.DashboardCard"
+                android:backgroundTint="@color/primary">
+
+                <LinearLayout
+                    style="@style/Widget.App.DashboardCardContent"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.05"
+                        android:text="DAILY PROMPT"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvPromptTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="What small victory can you celebrate today?"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Mood Check Widget -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.App.DashboardCard">
+                <LinearLayout
+                    style="@style/Widget.App.DashboardCardContent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="How are you feeling?"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+                    <!-- IMPORTANT: The tags must match the strings in your Java code -->
+                    <ImageView
+                        android:id="@+id/moodHappy"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:alpha="0.5"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:tag="Happy" />
+                    <ImageView
+                        android:id="@+id/moodNeutral"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:alpha="0.5"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_email"
+                        android:tag="Neutral" />
+                    <ImageView
+                        android:id="@+id/moodSad"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="8dp"
+                        android:alpha="0.5"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:tag="Sad" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Habit Summary -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/habitsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_habit" />
+
+            <!-- Journal Preview -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardJournalPreview"
+                style="@style/Widget.App.DashboardCard">
+                <TextView
+                    android:id="@+id/tvJournalSnippet"
+                    style="@style/Widget.App.DashboardCardContent"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/primary"
+                    tools:text="Today was surprisingly productive. I managed to finish the report and even had time to go for a walk. Feeling accomplished..." />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Quick Action Buttons -->
+    <LinearLayout
+        android:id="@+id/quickButtonsLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddJournal"
+            android:layout_width="16dp"
+            android:layout_height="19dp"
+            style="@style/Widget.App.QuickActionButton"
+            android:text="Add Journal"
+            app:icon="@drawable/ic_add_journal" />
+        <View
+            android:layout_width="16dp"
+            android:layout_height="0dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddHabit"
+            android:layout_width="16dp"
+            android:layout_height="19dp"
+            style="@style/Widget.App.QuickActionButton"
+            android:text="Add Habit"
+            app:icon="@drawable/ic_add_habit" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

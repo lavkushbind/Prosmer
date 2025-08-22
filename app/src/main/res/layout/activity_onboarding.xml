@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/text_headline"
+    android:background="@color/app_white"
     tools:context=".OnboardingActivity">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@id/layout_dots_indicator"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- REPLACED TabLayout with this LinearLayout -->
+    <!-- This LinearLayout for the dots indicator does not require styling changes -->
     <LinearLayout
         android:id="@+id/layout_dots_indicator"
         android:layout_width="0dp"
@@ -26,6 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Button styled with Primary color, shadow, and Gilroy Bold font -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_get_started"
         android:layout_width="0dp"
@@ -33,29 +34,35 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
+        android:elevation="4dp"
+        android:fontFamily="gilroy_bold"
         android:padding="16dp"
         android:text="@string/get_started"
-        android:textColor="@color/white"
+        android:textColor="@color/app_white"
         android:textSize="16sp"
-        android:textStyle="bold"
         android:visibility="gone"
-        app:backgroundTint="#011423"
-        app:cornerRadius="12dp"
+        app:backgroundTint="@color/app_primary"
+        app:cornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="@id/text_sign_in"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" /> <!-- tools:visibility makes it visible in the preview -->
 
+    <!-- Sign in text styled according to "Gilroy-Regular, 14px" spec -->
     <TextView
         android:id="@+id/text_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:fontFamily="gilroy"
+        android:letterSpacing="0.02"
         android:text="@string/already_have_account"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/app_grey"
         android:textSize="14sp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" /> <!-- tools:visibility makes it visible in the preview -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

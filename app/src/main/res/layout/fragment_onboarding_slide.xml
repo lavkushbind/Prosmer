@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/text_headline"
+    android:background="@color/app_white"
     android:padding="32dp">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -21,30 +21,35 @@
         app:lottie_loop="true"
         tools:src="@tools:sample/avatars" />
 
+    <!-- Title styled according to "Gilroy-Bold, 24px" spec -->
     <TextView
         android:id="@+id/text_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:fontFamily="gilroy_bold"
         android:gravity="center"
-        android:textColor="@color/text_primary"
+        android:letterSpacing="0.03"
+        android:textColor="@color/app_dark_grey"
         android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/text_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lottie_animation"
         tools:text="@string/onboarding_title_1" />
 
+    <!-- Description styled according to "Gilroy-Regular, 14px" spec -->
     <TextView
         android:id="@+id/text_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="gilroy"
         android:gravity="center"
+        android:letterSpacing="0.02"
         android:lineSpacingExtra="4dp"
-        android:textColor="@color/text_primary"
-        android:textSize="16sp"
+        android:textColor="@color/app_grey"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
